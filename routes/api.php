@@ -7,4 +7,4 @@ use App\Http\Controllers\CareerController;
 
 Route::apiResource('students', StudentController::class);
 Route::apiResource('teachers', TeacherController::class);
-Route::apiResource('career', CareerController::class);
+Route::apiResource('careers', CareerController::class);

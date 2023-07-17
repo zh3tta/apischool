@@ -18,9 +18,8 @@ return new class extends Migration
             $table->string('address');
             $table->string('email')->unique();
             $table->integer('phone');
-            $table->foreignId('career_id')
-            ->constrained('carrers')
-            ->onUpdate('cascade')->onDelete('restrict');
+            $table->unsignedBigInteger('career_id');
+            $table->foreign('career_id')->references('id')->on('careers');
             $table->enum('removed',['true','false'])->default('false');
             $table->timestamps();
         });
