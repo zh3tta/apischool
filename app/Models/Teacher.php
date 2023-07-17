@@ -12,6 +12,7 @@ class Teacher extends Model
         'dni',
         'name',
         'email',
-        'phone'
+        'phone',
+        'removed'
     ];
 }

@@ -14,6 +14,11 @@ class Student extends Model
         'address',
         'email',
         'phone',
-        'career_id'
+        'career_id',
+        'removed'
     ];
+
+    public function career(){
+        return $this->belongsTo(Career::class);
+    }
 }

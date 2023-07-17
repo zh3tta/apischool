@@ -11,6 +11,7 @@ class Career extends Model
     protected $fillable = [
         'name',
         'duration',
-        'modality'
+        'modality',
+        'removed'
     ];
 }
