@@ -11,16 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('students', function (Blueprint $table) {
+        Schema::create('careers', function (Blueprint $table) {
             $table->id();
-            $table->integer('dni')->unique();
-            $table->string('name');
-            $table->string('address');
-            $table->string('email')->unique();
-            $table->integer('phone');
-            $table->foreignId('career_id')
-            ->constrained('carrers')
-            ->onUpdate('cascade')->onDelete('restrict');
+            $table->string('name')->unique();
+            $table->string('duration');
+            $table->string('modality');
             $table->enum('removed',['true','false'])->default('false');
             $table->timestamps();
         });
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('students');
+        Schema::dropIfExists('careers');
     }
 };
