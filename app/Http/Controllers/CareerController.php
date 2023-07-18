@@ -7,43 +7,47 @@ use Illuminate\Http\Request;
 
 class CareerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        return Career::all();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'duration' => 'required',
+            'modality' => 'required'
+        ]);
+        $career = new Career($request->input());
+        $career->save();
+        return $career;
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Career $career)
     {
-        //
+        $career = Career::where('id', $career->id)
+                        ->where('removed', 'false')
+                        ->get();
+        return $career;
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Career $career)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'duration' => 'required',
+            'modality' => 'required'
+        ]);
+        $career->update($request->input());
+        return $career;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Career $career)
     {
-        //
+        $career->update([
+            'removed' => 'true'
+        ]);
+        return $career;
     }
 }
