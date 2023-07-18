@@ -9,7 +9,9 @@ class CareerController extends Controller
 {
     public function index()
     {
-        return Career::all();
+        $career = Career::where('removed', 'false')
+                        ->get();
+        return $career;
     }
 
     public function store(Request $request)
@@ -34,11 +36,6 @@ class CareerController extends Controller
 
     public function update(Request $request, Career $career)
     {
-        $request->validate([
-            'name' => 'required',
-            'duration' => 'required',
-            'modality' => 'required'
-        ]);
         $career->update($request->input());
         return $career;
     }
