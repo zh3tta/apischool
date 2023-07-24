@@ -18,8 +18,9 @@ class GradeController extends Controller
     {
         $request->validate([
             'subject_id' => 'required',
+            'student_id' => 'required',
             'grade_number' => 'required',
-            'grade' => 'required'
+            'grade_text' => 'required'
         ]);
         $grade = new Grade($request->input());
         $grade->save();

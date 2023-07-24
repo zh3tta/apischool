@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('subject_id');
             $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students');
             $table->integer('grade_number');
-            $table->string('grade');
+            $table->string('grade_text');
             $table->enum('removed',['true','false'])->default('false');
             $table->timestamps();
         });

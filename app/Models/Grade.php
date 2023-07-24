@@ -10,12 +10,17 @@ class Grade extends Model
     use HasFactory;
     protected $fillable = [
         'subject_id',
+        'student_id',
         'grade_number',
-        'grade',
+        'grade_text',
         'removed'
     ];
 
     public function subject(){
         return $this->belongsTo(Subject::class);
+    }
+
+    public function student(){
+        return $this->belongsTo(Student::class);
     }
 }
