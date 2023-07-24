@@ -7,28 +7,16 @@ use Illuminate\Http\Request;
 
 class InstitutionController extends Controller
 {
-    public function index()
+    public function showInstitution()
     {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show(Institution $institution)
-    {
-        //
+        $institution = Institution::where('id', '=', 1)
+                                    ->get();
+        return $institution;
     }
 
     public function update(Request $request, Institution $institution)
     {
-        //
-    }
-
-    public function destroy(Institution $institution)
-    {
-        //
+        $institution->update($request->input());
+        return $institution;
     }
 }
