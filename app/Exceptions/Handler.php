@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -23,8 +24,55 @@ class Handler extends ExceptionHandler
      */
     public function register(): void
     {
-        $this->reportable(function (Throwable $e) {
-            //
+        $this->renderable(function (NotFoundHttpException $e,$request) {
+            if($request->is('api/students/*')){
+                return response()->json([
+                    'status' => false,
+                    'message' => 'The selected student is invalid'
+                ],404);
+            }
+
+            if($request->is('api/teachers/*')){
+                return response()->json([
+                    'status' => false,
+                    'message' => 'The selected teacher is invalid'
+                ],404);
+            }
+
+            if($request->is('api/careers/*')){
+                return response()->json([
+                    'status' => false,
+                    'message' => 'The selected career is invalid'
+                ],404);
+            }
+
+            if($request->is('api/grades/*')){
+                return response()->json([
+                    'status' => false,
+                    'message' => 'The selected grade is invalid'
+                ],404);
+            }
+
+            if($request->is('api/subjects/*')){
+                return response()->json([
+                    'status' => false,
+                    'message' => 'The selected subject is invalid'
+                ],404);
+            }
+
+            if($request->is('api/teachers/*')){
+                return response()->json([
+                    'status' => false,
+                    'message' => 'The selected teacher is invalid'
+                ],404);
+            }
+
+            if($request->is('api/institution/*')){
+                return response()->json([
+                    'status' => false,
+                    'message' => 'The selected institution is invalid'
+                ],404);
+            }
         });
     }
 }
