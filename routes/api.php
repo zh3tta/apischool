@@ -9,6 +9,10 @@ use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\InstitutionController;
 use App\Http\Controllers\AuthController;
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Requested-With');
+
 Route::post('auth/register', [AuthController::class, 'create']);
 Route::post('auth/login', [AuthController::class, 'login']);
 
