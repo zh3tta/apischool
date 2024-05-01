@@ -1,10 +1,10 @@
 # API-rest school with Laravel
 
-Este proyecto es una REST API de una escuela realizada con php, laravel y mysql como tecnologias principales. Permite registrar usuarios para acceder a carreras, materías, profesores, estudientes y usuarios en el cual puede agregar dicha información. El usuario puede crear una cuenta e iniciar sesión, como administrador.
+This project is a REST API of a school made with php, laravel and mysql as main technologies. It allows users to register to access careers, matterhouses, teachers, students and users in which you can add such information. The user can create an account and log in, as an administrator.
 
-## Instalación
+## Installation
 
-Para ejecutar el REST API localmente, siga estos pasos: 
+To run the REST API locally, follow these steps:
 
 ```bash
 git clone https://github.com/byZhetta/apischool.git
@@ -14,13 +14,13 @@ npm install
 php artisan key:generate 
 ```
 
-## Correr aplicación
+## Run app
 
 ```bash
 php artisan serve
 ```
 
-## Tecnologías principales
+## Technologies
 
 - php v8.1
 - laravel v10.10
