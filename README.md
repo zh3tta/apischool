@@ -1,4 +1,4 @@
-# API-rest school with Laravel
+# API-rest school 
 
 This project is a REST API of a school made with php, laravel and mysql as main technologies. It allows users to register to access careers, matterhouses, teachers, students and users in which you can add such information. The user can create an account and log in, as an administrator.
 
@@ -29,4 +29,4 @@ php artisan serve
 
 ## License
 
-[@byZhetta](https://github.com/byZhetta) - [MIT license](https://opensource.org/licenses/MIT).
+[@byZhetta](https://github.com/byZhetta) 
