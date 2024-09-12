@@ -26,7 +26,3 @@ php artisan serve
 - laravel v10.10
 - laravel/sanctum v3.2
 - laravel/tinker v2.8
-
-## License
-
-[@byZhetta](https://github.com/byZhetta) 
