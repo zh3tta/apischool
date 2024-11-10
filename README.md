@@ -7,7 +7,7 @@ This project is a REST API of a school made with php, laravel and mysql as main 
 To run the REST API locally, follow these steps:
 
 ```bash
-git clone https://github.com/byZhetta/apischool.git
+git clone https://github.com/zh3tta/apischool.git
 cd apischool
 composer install
 npm install
